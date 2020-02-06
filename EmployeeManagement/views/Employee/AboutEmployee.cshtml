@@ -1,0 +1,31 @@
+﻿@model EmployeeProjectViewModel
+@*@{
+        Layout="~/Views/Shared/_Layout.cshtml";
+    }*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AboutEmployee</title>
+</head>
+<body>
+    <h1>Employee details</h1>
+    <table border="1 ">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Dept</td>
+            <td>projectName</td>
+        </tr>
+        <tr>
+            <td>@Model.employee.Id</td>
+            <td>@Model.employee.Name</td>
+            <td>@Model.employee.Email</td>
+            <td>@Model.employee.Dept</td>
+            <td>@Model.projectName</td>
+        </tr>
+</body>
+</html>

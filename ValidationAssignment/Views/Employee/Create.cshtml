@@ -1,0 +1,41 @@
+﻿@model ValidationAssignment.Models.Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+@using (Html.BeginForm())
+{
+<table class="table table-bordered">
+    <tr>
+        <td>EID</td>
+        <td>@Html.TextBoxFor(m => m.EID)</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@Html.TextBoxFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>Designation</td>
+        <td>@Html.DropDownListFor(m => m.Designation, new SelectList(new string[] { "FSE", "PAT", "Tester", "SD" }))</td>
+
+    </tr>
+    <tr>
+        <td>Project Name</td>
+        <td>@Html.DropDownListFor(m => m.ProjectName, new SelectList(new string[] { "Banking", "e-mart", "Web Development", "Mobile apps" }))</td>
+
+    </tr>
+   
+    <tr>
+        <td>Password</td>
+        <td>@Html.Password("pwd")</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Register" />
+        </td>
+    </tr>
+</table>
+}
+
+

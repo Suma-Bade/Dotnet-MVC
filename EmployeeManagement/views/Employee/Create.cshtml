@@ -1,0 +1,63 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+<h1>Create</h1>
+@*@using (Html.BeginForm()) ;
+{
+
+Name: @Html.TextBox("TextBox1", "Enter Name")<br />
+    Address:@Html.TextArea("textarea", "address")<br />
+
+    Pasword:@Html.Password("password")<br />
+    Program:@Html.ListBox("li",new MultiSelectList(new[] { "ASP","ASP.NET Core"}))
+@Html.Label("Name")
+@Html.TextBoxFor(m=>m.Name, "Enter Name")<br />
+    @Html.LabelFor(m=>m.Email)<br />
+
+   @Html.PasswordFor(m=>m.Id)<br />
+@Html.Display("Id");
+<br />
+@Html.DisplayFor(m=>m.Id)
+<br />
+@Html.EditorFor(m=>m.Email)
+<br />
+@Html.Display("dept")
+<br />
+@Html.EditorFor(m=>m.Dept)
+<br /> 
+   <input class="btn btn-primary" type="submit"value="submit"action="Employee/Create/1" />
+}*@
+
+<form asp-controller="Employee"asp-action="Create" method="post">
+    <div class="form-row">
+        <label asp-for="Name" class="col-form-label">Name</label>
+        <input asp-for="Name"  class="col-lg-6"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+    <div class="form-row">
+        <label asp-for="Email" class="col-form-label">Email</label>
+        <input asp-for="Email"   class="col-lg-6"/>
+        <span asp-validation-for="Email"class="text-danger"></span>
+
+    </div>
+    <div  class="form-row">
+        <label asp-for="Dept" class="col-form-label">Dept</label>
+        <select asp-for="Dept"   class="col-lg-6" asp-items="Html.GetEnumSelectList<Dept>()"></select>
+    </div>
+    
+        <div asp-validation-summary="All"class="text-danger"></div>
+    
+    <div class="form-row">
+        <input type="submit"value="Create Employee" />
+    </div>
+    <div>
+        <partial name="~/views/Employee/_myP artial.cshtml" />
+    </div>
+
+</form>

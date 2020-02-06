@@ -1,0 +1,55 @@
+﻿@model Employee
+@*@{
+    Layout="~/Views/Shared/_Layout.cshtml";
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    @{var emp1=ViewData["employee"]as  EmployeeManagement.Models.Employee;
+        }
+    
+        
+   
+    <h1>Employee details</h1>
+    <table border="1 ">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Dept</td>
+        </tr>
+        <tr>
+            @*<td>@emp1.Id</td>
+        <td>@emp1.Name</td>
+        <td>@emp1.Email</td>
+        <td>@emp1.Dept</td>*@
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Email</td>
+            <td>@Model.Dept</td>
+
+            @*  <td>@ViewData["id"]</td>
+        <td>@ViewData["name"]</td>
+        <td>@ViewData["email"]</td>
+        <td>@ViewData["dept"]</td>*@
+
+            @* <td>@ViewBag.id</td>
+        <td>@ViewBag.name</td>
+        <td>@ViewBag.email</td>
+        <td>@ViewBag.dept</td>*@
+        </tr>
+        @*<tr>
+            <td>@ViewBag.employee.Id</td>
+            <td>@ViewBag.employee.Name</td>
+            <td>@ViewBag.employee.Email</td>
+            <td>@ViewBag.employee.Dept</td>
+        </tr>*@
+    </table>
+</body>
+</html>

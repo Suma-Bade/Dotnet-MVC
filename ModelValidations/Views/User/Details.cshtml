@@ -1,0 +1,10 @@
+﻿@model ModelValidations.Models.User
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome @Html.DisplayFor(m=>m.Name)</h1>
+Password: @Html.DisplayFor(m=>m.Pwd)
+@Html.ActionLink("Logout","Login","User ")
+
